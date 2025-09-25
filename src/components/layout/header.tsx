@@ -6,11 +6,12 @@ export function Header() {
       <div className="container flex h-16 max-w-7xl items-center">
         <div className="mr-4 flex items-center">
           <Image
-            src="https://storage.googleapis.com/studiopanda-assets/wwf-logo-scratch.png"
+            src="https://picsum.photos/seed/wwf-logo/48/48"
             width={48}
             height={48}
             alt="Logo WWF"
             className="dark:invert"
+            data-ai-hint="logo"
           />
           <h1 className="ml-3 font-headline text-2xl font-bold tracking-tight">
             WWF Cronología 2000
