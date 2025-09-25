@@ -5,14 +5,16 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { EventDetails } from './event-details';
 import { cn } from '@/lib/utils';
-import { Tv, Ticket } from 'lucide-react';
+import { Tv, Ticket, Eye, EyeOff } from 'lucide-react';
 import { useState } from 'react';
 
 type EventCardProps = {
   event: Event;
+  isWatched: boolean;
+  toggleWatched: (eventId: string) => void;
 };
 
-export function EventCard({ event }: EventCardProps) {
+export function EventCard({ event, isWatched, toggleWatched }: EventCardProps) {
   const [open, setOpen] = useState(false);
 
   const eventName = event.type === 'PPV' ? event.name : event.type;
@@ -60,11 +62,16 @@ export function EventCard({ event }: EventCardProps) {
               {eventIcon}
               <span>{event.type}</span>
             </div>
+            {isWatched && (
+                <div className="flex items-center gap-1 text-xs text-primary">
+                    <Eye className="h-4 w-4" />
+                </div>
+            )}
           </CardContent>
         </Card>
       </DialogTrigger>
       <DialogContent className="max-h-[90vh] max-w-2xl overflow-y-auto">
-        <EventDetails event={event} />
+        <EventDetails event={event} isWatched={isWatched} toggleWatched={toggleWatched} />
       </DialogContent>
     </Dialog>
   );

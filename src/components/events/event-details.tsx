@@ -13,15 +13,15 @@ import { AIPreview } from './ai-preview';
 import { cn } from '@/lib/utils';
 import { Separator } from '../ui/separator';
 import { Checkbox } from '@/components/ui/checkbox';
-import { useState } from 'react';
 import { Label } from '@/components/ui/label';
 
 type EventDetailsProps = {
   event: Event;
+  isWatched: boolean;
+  toggleWatched: (eventId: string) => void;
 };
 
-export function EventDetails({ event }: EventDetailsProps) {
-  const [watched, setWatched] = useState(false);
+export function EventDetails({ event, isWatched, toggleWatched }: EventDetailsProps) {
   const eventName = event.type === 'PPV' ? event.name : event.type;
   
   let badgeVariant: 'default' | 'secondary' | 'destructive' | 'outline' | null | undefined = 'default';
@@ -92,7 +92,7 @@ export function EventDetails({ event }: EventDetailsProps) {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Checkbox id="watched" checked={watched} onCheckedChange={(checked) => setWatched(!!checked)} />
+            <Checkbox id="watched" checked={isWatched} onCheckedChange={() => toggleWatched(event.id)} />
             <Label htmlFor="watched" className="flex items-center gap-2 font-medium">
               <CheckSquare className="h-5 w-5 text-primary" />
               Marcar como visto
