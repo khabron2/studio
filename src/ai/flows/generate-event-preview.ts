@@ -19,7 +19,7 @@ const GenerateEventPreviewInputSchema = z.object({
 export type GenerateEventPreviewInput = z.infer<typeof GenerateEventPreviewInputSchema>;
 
 const GenerateEventPreviewOutputSchema = z.object({
-  previewText: z.string().describe('A short AI-generated preview of the event.'),
+  previewText: z.string().describe('Un breve avance del evento generado por IA.'),
 });
 export type GenerateEventPreviewOutput = z.infer<typeof GenerateEventPreviewOutputSchema>;
 
@@ -31,13 +31,13 @@ const prompt = ai.definePrompt({
   name: 'generateEventPreviewPrompt',
   input: {schema: GenerateEventPreviewInputSchema},
   output: {schema: GenerateEventPreviewOutputSchema},
-  prompt: `You are a professional wrestling historian. Generate a short preview of the following event based on its historical data.
+  prompt: `Eres un historiador de la lucha libre profesional. Genera un breve avance del siguiente evento basándote en sus datos históricos. La respuesta debe ser en español.
 
-Event Name: {{{eventName}}}
-Event Date: {{{eventDate}}}
-Event Location: {{{eventLocation}}}
+Nombre del Evento: {{{eventName}}}
+Fecha del Evento: {{{eventDate}}}
+Lugar del Evento: {{{eventLocation}}}
 
-Write a brief and engaging summary (around 50-75 words) highlighting key storylines or notable occurrences that might have transpired during the event. Focus on what makes this event unique or memorable within the broader context of professional wrestling history.`, 
+Escribe un resumen breve y atractivo (alrededor de 50-75 palabras) destacando las historias clave o los sucesos notables que podrían haber ocurrido durante el evento. Concéntrate en lo que hace que este evento sea único o memorable dentro del contexto más amplio de la historia de la lucha libre profesional.`,
 });
 
 const generateEventPreviewFlow = ai.defineFlow(
