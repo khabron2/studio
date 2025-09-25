@@ -1,3 +1,5 @@
+'use client';
+
 import type { Event } from '@/lib/types';
 import {
   DialogHeader,
@@ -6,16 +8,20 @@ import {
 } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { MapPin, Calendar, ListOrdered } from 'lucide-react';
+import { MapPin, Calendar, ListOrdered, CheckSquare } from 'lucide-react';
 import { AIPreview } from './ai-preview';
 import { cn } from '@/lib/utils';
 import { Separator } from '../ui/separator';
+import { Checkbox } from '@/components/ui/checkbox';
+import { useState } from 'react';
+import { Label } from '@/components/ui/label';
 
 type EventDetailsProps = {
   event: Event;
 };
 
 export function EventDetails({ event }: EventDetailsProps) {
+  const [watched, setWatched] = useState(false);
   const eventName = event.type === 'PPV' ? event.name : event.type;
   
   let badgeVariant: 'default' | 'secondary' | 'destructive' | 'outline' | null | undefined = 'default';
@@ -83,14 +89,22 @@ export function EventDetails({ event }: EventDetailsProps) {
         </div>
 
         <Separator />
-        
-        <div className="mt-2 flex justify-end">
-            <Button asChild variant="outline">
-                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.venue ? `${event.venue}, ${event.location}` : event.location)}`} target="_blank" rel="noopener noreferrer">
-                    <MapPin className="mr-2 h-4 w-4" />
-                    Ver en Mapa
-                </a>
-            </Button>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <Checkbox id="watched" checked={watched} onCheckedChange={(checked) => setWatched(!!checked)} />
+            <Label htmlFor="watched" className="flex items-center gap-2 font-medium">
+              <CheckSquare className="h-5 w-5 text-primary" />
+              Marcar como visto
+            </Label>
+          </div>
+
+          <Button asChild variant="outline">
+              <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.venue ? `${event.venue}, ${event.location}` : event.location)}`} target="_blank" rel="noopener noreferrer">
+                  <MapPin className="mr-2 h-4 w-4" />
+                  Ver en Mapa
+              </a>
+          </Button>
         </div>
       </div>
     </>

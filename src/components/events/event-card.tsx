@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { EventDetails } from './event-details';
 import { cn } from '@/lib/utils';
-import { Tv, Ticket, CheckCircle2, XCircle } from 'lucide-react';
+import { Tv, Ticket } from 'lucide-react';
 import { useState } from 'react';
 
 type EventCardProps = {
@@ -30,8 +30,6 @@ export function EventCard({ event }: EventCardProps) {
       : event.type === 'SmackDown'
       ? 'border-accent/30 hover:border-accent/80 hover:shadow-accent/20'
       : 'border-yellow-500/30 hover:border-yellow-500/80 hover:shadow-yellow-500/20';
-  
-  const isAvailable = event.matches.length > 0;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -62,11 +60,6 @@ export function EventCard({ event }: EventCardProps) {
               {eventIcon}
               <span>{event.type}</span>
             </div>
-            {isAvailable ? (
-              <CheckCircle2 className="h-4 w-4 text-green-500" />
-            ) : (
-              <XCircle className="h-4 w-4 text-red-500" />
-            )}
           </CardContent>
         </Card>
       </DialogTrigger>
