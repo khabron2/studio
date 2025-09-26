@@ -12,6 +12,7 @@ export function Header() {
             alt="Logo WWF"
             className="dark:invert"
             data-ai-hint="logo"
+            unoptimized
           />
           <h1 className="ml-3 font-headline text-2xl font-bold tracking-tight">
             WWF Cronología 2000
