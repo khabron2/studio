@@ -5,12 +5,42 @@ export const chronology: Chronology = [
   {
     month: 'Enero',
     events: [
-      { id: 'enero-3-raw', type: 'Raw', day: 3, date: '3 de enero, 2000', location: 'Miami, FL', matches: [], venue: 'AmericanAirlines Arena' },
-      { id: 'enero-6-smackdown', type: 'SmackDown', day: 6, date: '6 de enero, 2000', location: 'Orlando, FL', matches: [], venue: 'Orlando Arena' },
-      { id: 'enero-10-raw', type: 'Raw', day: 10, date: '10 de enero, 2000', location: 'St. Louis, MO', matches: [], venue: 'Kiel Center' },
-      { id: 'enero-13-smackdown', type: 'SmackDown', day: 13, date: '13 de enero, 2000', location: 'Chicago, IL', matches: [], venue: 'United Center' },
-      { id: 'enero-17-raw', type: 'Raw', day: 17, date: '17 de enero, 2000', location: 'New Haven, CT', matches: [], venue: 'New Haven Coliseum' },
-      { id: 'enero-20-smackdown', type: 'SmackDown', day: 20, date: '20 de enero, 2000', location: 'Providence, RI', matches: [], venue: 'Providence Civic Center' },
+      { id: 'enero-3-raw', type: 'Raw', day: 3, date: '3 de enero, 2000', location: 'Miami, FL', venue: 'AmericanAirlines Arena', matches: [
+          { participants: ['The Rock', 'Big Show', 'Kane', 'Mankind', 'Triple H', 'X-Pac'], stipulation: 'Triple Threat Tag Team Match' },
+          { participants: ['Jeff Hardy', 'Al Snow'] },
+          { participants: ['Kurt Angle', 'Kane'] }
+        ] 
+      },
+      { id: 'enero-6-smackdown', type: 'SmackDown', day: 6, date: '6 de enero, 2000', location: 'Orlando, FL', venue: 'Orlando Arena', matches: [
+          { participants: ['The Rock', 'The New Age Outlaws & X-Pac'], stipulation: '3-on-1 Handicap Match' },
+          { participants: ['The Hollys', 'Chris Jericho & Chyna'] },
+          { participants: ['Kurt Angle', 'The Rock'] }
+        ] 
+      },
+      { id: 'enero-10-raw', type: 'Raw', day: 10, date: '10 de enero, 2000', location: 'St. Louis, MO', venue: 'Kiel Center', matches: [
+          { participants: ['The Rock', 'The New Age Outlaws'], stipulation: 'Handicap Match' },
+          { participants: ['Triple H & X-Pac', 'The Acolytes'] },
+          { participants: ['Big Show', 'Mankind & The Rock'] }
+        ] 
+      },
+      { id: 'enero-13-smackdown', type: 'SmackDown', day: 13, date: '13 de enero, 2000', location: 'Chicago, IL', venue: 'United Center', matches: [
+          { participants: ['The Rock & The Acolytes', 'The New Age Outlaws & X-Pac'] },
+          { participants: ['Triple H', 'Big Show'] },
+          { participants: ['Mankind', 'Al Snow'] }
+        ] 
+      },
+      { id: 'enero-17-raw', type: 'Raw', day: 17, date: '17 de enero, 2000', location: 'New Haven, CT', venue: 'New Haven Coliseum', matches: [
+          { participants: ['The Rock', 'Rikishi'], stipulation: 'Over The Top Rope Challenge' },
+          { participants: ['Triple H', 'Test'] },
+          { participants: ['Kane', 'Big Show'] }
+        ] 
+      },
+      { id: 'enero-20-smackdown', type: 'SmackDown', day: 20, date: '20 de enero, 2000', location: 'Providence, RI', venue: 'Providence Civic Center', matches: [
+          { participants: ['The Rock', 'Rikishi'], stipulation: 'No Holds Barred' },
+          { participants: ['Triple H', 'The Godfather'] },
+          { participants: ['The Hardy Boyz', 'The Dudley Boyz'] }
+        ] 
+      },
       {
         id: 'enero-23-ppv',
         type: 'PPV',
@@ -26,9 +56,24 @@ export const chronology: Chronology = [
           { participants: ['30-Man Royal Rumble Match'], title: 'Winner gets a WWF Championship match at WrestleMania' },
         ],
       },
-      { id: 'enero-24-raw', type: 'Raw', day: 24, date: '24 de enero, 2000', location: 'Philadelphia, PA', matches: [], venue: 'First Union Center' },
-      { id: 'enero-27-smackdown', type: 'SmackDown', day: 27, date: '27 de enero, 2000', location: 'Baltimore, MD', matches: [], venue: 'Baltimore Arena' },
-      { id: 'enero-31-raw', type: 'Raw', day: 31, date: '31 de enero, 2000', location: 'Pittsburgh, PA', matches: [], venue: 'Civic Arena' },
+      { id: 'enero-24-raw', type: 'Raw', day: 24, date: '24 de enero, 2000', location: 'Philadelphia, PA', venue: 'First Union Center', matches: [
+          { participants: ['The Rock', 'Chris Benoit'], title: 'WWF Championship' },
+          { participants: ['Triple H', 'Cactus Jack'] },
+          { participants: ['The Hardy Boyz', 'The New Age Outlaws'] }
+        ] 
+      },
+      { id: 'enero-27-smackdown', type: 'SmackDown', day: 27, date: '27 de enero, 2000', location: 'Baltimore, MD', venue: 'Baltimore Arena', matches: [
+          { participants: ['The Rock', 'Rikishi', 'Kane'], stipulation: 'Triple Threat Match' },
+          { participants: ['Chris Benoit', 'Test'] },
+          { participants: ['The Hardy Boyz', 'The Dudley Boyz'] }
+        ] 
+      },
+      { id: 'enero-31-raw', type: 'Raw', day: 31, date: '31 de enero, 2000', location: 'Pittsburgh, PA', venue: 'Civic Arena', matches: [
+          { participants: ['The Rock', 'The Hollys'], stipulation: 'Handicap Match' },
+          { participants: ['Triple H', 'Bubba Ray Dudley'] },
+          { participants: ['Cactus Jack', 'Al Snow'] }
+        ] 
+      },
     ],
   },
   {
@@ -131,6 +176,8 @@ export const chronology: Chronology = [
             { participants: ['The Rock', 'Triple H', 'Shane McMahon'], title: 'WWF Championship' },
             { participants: ['The Hardy Boyz', 'Edge & Christian'], title: 'WWF Tag Team Championship' },
             { participants: ['Kurt Angle', 'Chris Jericho'] },
+            { participants: ['Bull Buchanan', 'The Godfather'] },
+            { participants: ['Eddie Guerrero', 'Chris Jericho'], title: 'WWF European Championship' }
           ],
         },
         { id: 'mayo-8-raw', type: 'Raw', day: 8, date: '8 de mayo, 2000', location: 'Uniondale, NY', matches: [], venue: 'Nassau Coliseum' },
@@ -149,6 +196,8 @@ export const chronology: Chronology = [
             { participants: ['The Rock', 'Triple H'], title: 'WWF Championship', stipulation: 'Iron Man Match' },
             { participants: ['Chris Benoit', 'Chris Jericho'], stipulation: 'Submission Match' },
             { participants: ['Shane McMahon', 'Big Show'] },
+            { participants: ['Rikishi', 'Kurt Angle', 'Eddie Guerrero'] },
+            { participants: ['Edge & Christian', 'The Hardy Boyz', 'The Dudley Boyz'] }
           ],
         },
         { id: 'mayo-22-raw', type: 'Raw', day: 22, date: '22 de mayo, 2000', location: 'Indianapolis, IN', matches: [], venue: 'Conseco Fieldhouse' },
@@ -337,6 +386,8 @@ export const chronology: Chronology = [
           matches: [
             { participants: ['Kurt Angle', 'Rikishi', 'Stone Cold Steve Austin', 'The Rock'], title: 'WWF Championship' },
             { participants: ['The Hardy Boyz', 'Edge & Christian'], stipulation: 'Elimination Tables Match' },
+            { participants: ['The Dudley Boyz', 'T & A & Trish Stratus'] },
+            { participants: ['Kane', 'Chris Jericho'] },
           ],
         },
         { id: 'diciembre-4-raw', type: 'Raw', day: 4, date: '4 de diciembre, 2000', location: 'East Rutherford, NJ', matches: [], venue: 'Continental Airlines Arena' },
@@ -352,6 +403,7 @@ export const chronology: Chronology = [
           matches: [
             { participants: ['Kurt Angle', 'Stone Cold Steve Austin', 'Triple H', 'The Undertaker', 'The Rock', 'Rikishi'], title: 'WWF Championship', stipulation: 'Hell in a Cell Match' },
             { participants: ['Chris Benoit', 'Billy Gunn'], title: 'WWF Intercontinental Championship' },
+            { participants: ['The Hardy Boyz & Lita', 'The Radicalz (Dean Malenko, Perry Saturn & Eddie Guerrero)'] }
           ],
         },
         { id: 'diciembre-11-raw', type: 'Raw', day: 11, date: '11 de diciembre, 2000', location: 'Memphis, TN', matches: [], venue: 'Pyramid Arena' },
