@@ -910,4 +910,3 @@ export const chronology: Chronology = [
     ...month,
     events: month.events.sort((a, b) => a.day - b.day)
 }));
-

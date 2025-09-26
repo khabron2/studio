@@ -2,7 +2,10 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  /* config options here */
+  // Si tu repositorio se llama, por ejemplo, "mi-proyecto",
+  // y la URL de GitHub Pages es "usuario.github.io/mi-proyecto",
+  // también necesitarás esta línea. Quita el "//" para activarla:
+  // basePath: '/mi-proyecto',
   typescript: {
     ignoreBuildErrors: true,
   },
