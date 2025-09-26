@@ -6,7 +6,7 @@ export function Header() {
       <div className="container flex h-16 max-w-7xl items-center">
         <div className="mr-4 flex items-center">
           <Image
-            src="https://picsum.photos/seed/wwf-logo/48/48"
+            src="https://storage.googleapis.com/studiopanda-assets/wwe-logo-scratch.png"
             width={48}
             height={48}
             alt="Logo WWF"
