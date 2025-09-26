@@ -28,7 +28,7 @@ export function EventDetails({ event, isWatched, toggleWatched }: EventDetailsPr
   let badgeClassName = '';
 
   switch (event.type) {
-    case 'RAW':
+    case 'Raw':
       badgeVariant = 'default';
       break;
     case 'SmackDown':

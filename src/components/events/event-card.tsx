@@ -27,7 +27,7 @@ export function EventCard({ event, isWatched, toggleWatched }: EventCardProps) {
     );
 
   const cardColorClass =
-    event.type === 'RAW'
+    event.type === 'Raw'
       ? 'border-primary/30 hover:border-primary/80 hover:shadow-primary/20'
       : event.type === 'SmackDown'
       ? 'border-accent/30 hover:border-accent/80 hover:shadow-accent/20'

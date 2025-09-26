@@ -6,7 +6,7 @@ export type Match = {
 
 export type Event = {
   id: string;
-  type: 'RAW' | 'SmackDown' | 'PPV';
+  type: 'Raw' | 'SmackDown' | 'PPV';
   name?: string;
   date: string;
   day: number;
