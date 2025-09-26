@@ -33,7 +33,7 @@ export function EventDetails({ event, isWatched, toggleWatched }: EventDetailsPr
       break;
     case 'SmackDown':
       badgeVariant = 'default';
-      badgeClassName = 'bg-accent text-accent-foreground hover:bg-accent/80 border-accent/50';
+      badgeClassName = 'bg-accent text-accent-foreground hover:bg-accent/80 border-transparent';
       break;
     case 'PPV':
       badgeVariant = 'secondary';
