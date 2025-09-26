@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { EventDetails } from './event-details';
 import { cn } from '@/lib/utils';
-import { Tv, Ticket, Eye, EyeOff } from 'lucide-react';
+import { Tv, Ticket, Eye } from 'lucide-react';
 import { useState } from 'react';
 
 type EventCardProps = {
@@ -25,13 +25,24 @@ export function EventCard({ event, isWatched, toggleWatched }: EventCardProps) {
     ) : (
       <Tv className="h-4 w-4" />
     );
+  
+  let cardColorClass = '';
+  let dayColorClass = '';
 
-  const cardColorClass =
-    event.type === 'Raw'
-      ? 'border-primary/30 hover:border-primary/80 hover:shadow-primary/20'
-      : event.type === 'SmackDown'
-      ? 'border-accent/30 hover:border-accent/80 hover:shadow-accent/20'
-      : 'border-yellow-500/30 hover:border-yellow-500/80 hover:shadow-yellow-500/20';
+  switch (event.type) {
+    case 'Raw':
+      cardColorClass = 'border-primary/30 hover:border-primary/80 hover:shadow-primary/20';
+      dayColorClass = 'text-primary';
+      break;
+    case 'SmackDown':
+      cardColorClass = 'border-accent/30 hover:border-accent/80 hover:shadow-accent/20';
+      dayColorClass = 'text-accent';
+      break;
+    case 'PPV':
+      cardColorClass = 'border-yellow-500/30 hover:border-yellow-500/80 hover:shadow-yellow-500/20';
+      dayColorClass = 'text-yellow-500';
+      break;
+  }
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -44,7 +55,7 @@ export function EventCard({ event, isWatched, toggleWatched }: EventCardProps) {
         >
           <CardHeader className="flex-row items-start gap-4 p-4">
             <div className="flex h-16 w-16 flex-shrink-0 flex-col items-center justify-center rounded-lg bg-background/80">
-              <span className="font-headline text-4xl font-bold text-primary">
+              <span className={cn('font-headline text-4xl font-bold', dayColorClass)}>
                 {event.day}
               </span>
             </div>
